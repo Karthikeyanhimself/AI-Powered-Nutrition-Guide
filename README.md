@@ -4,9 +4,6 @@
 
 Built with **Next.js 14**, **TypeScript**, and **Google Gemini AI**, it acts as a local food guide, analyzing whether specific dishes are suitable for you or if they should be avoided.
 
-![NutriGuide Demo](https://via.placeholder.com/800x400?text=NutriGuide+App+Screenshot)
-*(Replace this link with a screenshot of your actual app later)*
-
 ---
 
 ##  Features
@@ -91,3 +88,10 @@ nutri-guide/
 ├── types/                   
 └── public/                
 ```
+---
+
+## 📸 Screenshots
+
+![Input Screen](public/image.png)
+
+![Result Screen](public/image copy.png)
