@@ -94,4 +94,4 @@ nutri-guide/
 
 ![Input Screen](public/image.png)
 
-![Result Screen](public/image copy.png)
+![Result Screen](public/image2.png)
