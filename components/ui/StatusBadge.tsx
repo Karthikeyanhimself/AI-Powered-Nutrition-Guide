@@ -12,7 +12,6 @@ export const StatusBadge = ({ status }: StatusBadgeProps) => {
             ? "bg-emerald-100 text-emerald-800"
             : "bg-rose-100 text-rose-800"
             }`}>
-            {/* Conditionally render the Icon */}
             {isGood ? <CheckCircle size={16} /> : <XCircle size={16} />}
             {status}
         </span>

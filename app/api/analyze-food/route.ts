@@ -2,17 +2,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
 
-// Initialize Gemini with the API Key from .env.local
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || "");
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    // Destructure the user input
     const { country, state, city, healthConditions, dietPreference, foodSearch } = body;
 
-    // 1. Construct the Prompt
-    // We explicitly tell the AI to act as a nutritionist and force JSON format
     const prompt = `
       User Details:
       Country: ${country}
@@ -84,18 +80,13 @@ export async function POST(req: Request) {
       }
     `;
 
-    // 2. Call the AI Model
-    // 'gemini-1.5-flash' is faster and cheaper, perfect for this task
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
 
-    // 3. Clean the Output
-    // AI sometimes wraps JSON in markdown blocks like ```json ... ```. We must strip those.
     const cleanedJson = text.replace(/```json/g, "").replace(/```/g, "").trim();
 
-    // 4. Parse and Validate
     try {
       const jsonResponse = JSON.parse(cleanedJson);
       return NextResponse.json(jsonResponse);

@@ -1,4 +1,3 @@
-// components/NutritionForm.tsx
 "use client";
 
 import { useState } from "react";
@@ -6,13 +5,11 @@ import { UserInput } from "@/types";
 import { motion } from "framer-motion";
 
 interface Props {
-    // The parent component (page.tsx) will handle the actual API call
     onSubmit: (data: UserInput) => void;
     isLoading: boolean;
 }
 
 export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
-    // Initialize state with default values
     const [formData, setFormData] = useState<UserInput>({
         country: "",
         state: "",
@@ -22,7 +19,6 @@ export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
         foodSearch: "",
     });
 
-    // Generic handler for all input changes
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) => {
@@ -30,14 +26,13 @@ export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
     };
 
     const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault(); // Stop the page from reloading
-        onSubmit(formData); // Send data up to the parent
+        e.preventDefault();
+        onSubmit(formData);
     };
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
 
-            {/* Location Section */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <input
                     required
@@ -61,7 +56,6 @@ export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
                 />
             </div>
 
-            {/* Health Conditions Section */}
             <div>
                 <label className="block text-sm font-medium text-slate-700 mb-1">
                     Health Conditions
@@ -75,7 +69,6 @@ export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
                 />
             </div>
 
-            {/* Diet & Specific Search Section */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label className="block text-sm font-medium text-slate-700 mb-1">
@@ -102,7 +95,6 @@ export const NutritionForm = ({ onSubmit, isLoading }: Props) => {
                 </div>
             </div>
 
-            {/* Submit Button with Animation */}
             <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}

@@ -18,7 +18,6 @@ export default function Home() {
     setResult(null);
 
     try {
-      // Call our own API route
       const response = await fetch("/api/analyze-food", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -44,7 +43,6 @@ export default function Home() {
     <main className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto">
 
-        {/* Title Section */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold text-slate-900 mb-3 tracking-tight">
             Nutri<span className="text-indigo-600">Guide</span>
@@ -54,12 +52,10 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Form Section */}
         <div className="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-8 border border-slate-100">
           <NutritionForm onSubmit={handleAnalysis} isLoading={loading} />
         </div>
 
-        {/* Error Message */}
         {error && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -70,10 +66,8 @@ export default function Home() {
           </motion.div>
         )}
 
-        {/* Loading State */}
         {loading && <ResultsSkeleton />}
 
-        {/* Results State */}
         <AnimatePresence>
           {!loading && result && (
             <motion.div

@@ -12,14 +12,10 @@ interface Props {
 export const ResultsDisplay = ({ data }: Props) => {
     return (
         <div className="space-y-8 mt-8">
-            {/* Header Info */}
             <div className="flex items-center gap-2 text-slate-500 text-sm font-medium uppercase tracking-wide">
                 <MapPin size={16} />
                 {data.location.city}, {data.location.country}
             </div>
-
-            {/* Searched Food Analysis (Conditional Rendering) */}
-            {/* We only show this block if the user actually searched for a specific food */}
             {data.searchedFoodAnalysis && data.searchedFoodAnalysis.foodName && (
                 <Card className="border-l-4 border-l-indigo-500">
                     <div className="flex justify-between items-start flex-wrap gap-4 mb-4">
@@ -39,7 +35,6 @@ export const ResultsDisplay = ({ data }: Props) => {
                 </Card>
             )}
 
-            {/* Grid Layout for Lists */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 {/* Good to Eat List */}
@@ -57,7 +52,6 @@ export const ResultsDisplay = ({ data }: Props) => {
                     </ul>
                 </Card>
 
-                {/* Better to Avoid List */}
                 <Card delay={0.2}>
                     <h3 className="text-lg font-bold text-rose-700 mb-4 flex items-center gap-2">
                         ⚠️ Better to Avoid
@@ -73,7 +67,6 @@ export const ResultsDisplay = ({ data }: Props) => {
                 </Card>
             </div>
 
-            {/* General Tip */}
             <Card className="bg-gradient-to-r from-indigo-50 to-blue-50 border-none" delay={0.3}>
                 <div className="flex gap-4 items-start">
                     <div className="bg-white p-2 rounded-full shadow-sm text-indigo-600">

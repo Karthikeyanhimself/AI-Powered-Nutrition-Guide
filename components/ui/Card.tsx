@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 interface CardProps {
     children: ReactNode;
     className?: string;
-    delay?: number; // Allows us to stagger animations (1st card, 2nd card, etc.)
+    delay?: number;
 }
 
 export const Card = ({ children, className, delay = 0 }: CardProps) => {
