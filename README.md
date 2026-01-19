@@ -8,11 +8,11 @@ Built with **Next.js 14**, **TypeScript**, and **Google Gemini AI**, it acts as 
 
 ##  Features
 
-- ** Location-Aware Analysis**: Uses AI to identify and analyze local foods specific to any country, state, or city.
-- ** Health-Centric**: Tailors recommendations based on user conditions (e.g., Diabetes, Hypertension, Gluten Intolerance).
-- ** Specific Food Check**: Allows users to search for specific dishes (e.g., "Samosa", "Pasta Carbonara") to see if they are safe.
-- ** Smart Categorization**: Automatically sorts foods into "Good to Eat" and "Better to Avoid" lists.
-- ** Fast & Responsive**: Built with Next.js App Router and Tailwind CSS for a seamless mobile and desktop experience.
+- Location-Aware Analysis: Uses AI to identify and analyze local foods specific to any country, state, or city.
+- Health-Centric: Tailors recommendations based on user conditions (e.g., Diabetes, Hypertension, Gluten Intolerance).
+- Specific Food Check: Allows users to search for specific dishes (e.g., "Samosa", "Pasta Carbonara") to see if they are safe.
+- Smart Categorization: Automatically sorts foods into "Good to Eat" and "Better to Avoid" lists.
+- Fast & Responsive: Built with Next.js App Router and Tailwind CSS for a seamless mobile and desktop experience.
 
 ---
 
@@ -40,7 +40,7 @@ Follow these steps to set up the project locally.
 
 1. **Clone the repository**
    ```bash
-   git clone [https://github.com/your-username/nutri-guide.git](https://github.com/your-username/nutri-guide.git)
+   git clone [https://github.com/Karthikeyanhimself/AI-Powered-Nutrition-Guide](https://github.com/Karthikeyanhimself/AI-Powered-Nutrition-Guide)
    cd nutri-guide
 2. **Install dependencies**
    ```bash
